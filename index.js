@@ -40,7 +40,7 @@ app.use('/adding-a-user', (req, res, next) => {
 
 app.use('/deleting-post', (req, res, next) => {
 
-    allUsers.splice(req.body.userID);
+    allUsers.splice(req.body.userID, 1);
     res.redirect("/users");
 });
 
