@@ -1,15 +1,18 @@
-<%- include("includes/head_navbar.ejs") %>
+<%- include("includes/head.ejs") %>
+
+    <link rel="stylesheet" href="/css/add-user.css">
+    <%- include("includes/navbar.ejs") %>
 
     <section id="content">
         <h1>Cadastrar um novo usuário</h1>
-        <form action="/adding-a-user" method="POST">
+        <form action="/adding-a-user" method="POST" id="add-users-form">
             <div class="block-label-input">
-                <label for="name">Nome do usuário</label>
-                <input type="text" name="name" />
+                <label for="name">Nome do usuário:</label>
+                <input type="text" name="name" id="name"/>
             </div>
             <div class="block-label-input">
-                <label for="description">Descrição do usuário</label>
-                <input type="text" name="description" />
+                <label for="description">Descrição do usuário:</label>
+                <textarea name="description" id="description"></textarea>
             </div>
             <button type="submit">ADICIONAR</button>
         </form>

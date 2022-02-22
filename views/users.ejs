@@ -1,13 +1,21 @@
-<%- include("includes/head_navbar.ejs") %>
+<%- include("includes/head.ejs") %>
+
+    <link rel="stylesheet" href="/css/users.css">
+    <%- include("includes/navbar.ejs") %>
 
     <section id="content">
         <h1>Lista de todos os usuários</h1>
 
         <% if (allUsers.length > 0) { %>
-            <% allUsers.forEach((user)=> {%>
-                <%- include("components/user-card.ejs", {user}) %>
-            <% }) %>
+            <div id="div-content-users">
+                <% allUsers.forEach((user)=> {%>
+                    <%- include("components/user-card.ejs", {user}) %>
+                <% }) %>
+            </div>
+        <% } else { %>
+            <h3 class="warning">Nenhum usuário cadastrado ainda</h3>
         <% } %>
+
     </section>
 
 <%- include("includes/final_footer.ejs") %>

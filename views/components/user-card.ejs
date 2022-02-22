@@ -1,14 +1,16 @@
 <div class="card-user">
-    <h4>
+    <h3>
         <%= user.name %>
-    </h4>
+    </h3>
     <p>
         <%= user.description %>
     </p>
     <form action="/deleting-post" method="POST">
         <input type="hidden" name="userID"  value="<%= user.id %>">
-        <button class="delete-user">
-            <img src="/images/trash.png" alt="APAGAR">
-        </button>
+        <div class="footer">
+            <button class="delete-user">
+                <img src="/images/trash.png" alt="APAGAR">
+            </button>
+        </div>
     </form>
 </div>
