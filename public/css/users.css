@@ -1,0 +1,49 @@
+div#div-content-users{
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+div#div-content-users div.card-user{
+
+    text-align: center;
+
+    width: 400px;
+
+    margin: 20px auto;
+
+    border-radius: 10px;
+    background-color: var(--color-card-user-background);
+}
+
+div.card-user p,
+div.card-user h3{
+
+    padding: 5px 20px;
+}
+
+div.card-user div.footer{
+
+    width: 100%;
+
+    margin-top: 10px;
+    padding: 2px 20px;
+
+    border-radius: 0 0 10px 10px;
+    background-color: var(--color-card-user-footer-background);
+}
+
+div.footer button{
+    background: none;
+    border: none;
+
+    cursor: pointer;
+
+    margin-left: calc(100% - 20px);
+}
+
+div.card-user button img{
+    width: 25px;
+}

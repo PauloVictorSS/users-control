@@ -1,0 +1,66 @@
+:root{
+    --color-background-primary: #298073;
+    --color-navbar-background: #154666;
+    --color-basic-text: white;
+    --color-card-user-background: #1977c9;
+    --color-card-user-footer-background: #1561a3;
+    --color-button-add-background: #64be5f;
+    --color-button-add-background-hover: #5ba357;
+    --color-warning-background: #be645f;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    color: var(--color-basic-text);
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    background-color: var(--color-background-primary);
+}
+
+nav{
+    background-color: var(--color-navbar-background);
+
+    padding: 10px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+nav a + a{
+    margin-left: 20px;
+}
+nav a.active{
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+h1{
+    margin: 10px 0;
+    
+    text-align: center;
+}
+
+h3.warning{
+
+    display: block;
+
+    text-align: center;
+
+    margin: 100px auto 0;
+    padding: 5px;
+
+    width: 350px;
+
+    box-shadow: 0 4px 4px 4px rgb(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: var(--color-warning-background);
+}

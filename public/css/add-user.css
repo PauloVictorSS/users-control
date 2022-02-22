@@ -1,0 +1,67 @@
+form#add-users-form{
+
+    width: 400px;
+
+    padding: 10px 20px;
+    margin: 20px auto;
+
+    border-radius: 10px;
+    background-color: var(--color-card-user-background);
+}
+
+form#add-users-form div.block-label-input{
+
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+}
+
+div.block-label-input input,
+div.block-label-input textarea{
+
+    border: none;
+    padding: 3px 5px;
+
+    color: black;
+}
+
+
+div.block-label-input input{
+
+    width: calc(400px - 40px - 119px);
+}
+
+div.block-label-input textarea{
+
+    height: 100px;
+    width: 100%;
+    resize: none;
+
+    margin-top: 5px;
+}
+
+form#add-users-form button{
+
+    display: block;
+
+    margin: 0 auto;
+    padding: 5px;
+
+    border: none;
+    border-radius: 10px;
+    background-color: var(--color-button-add-background);
+
+    transition: .3s;
+
+    cursor: pointer;
+}
+
+form#add-users-form button:hover{
+    font-weight: bolder;
+    background-color: var(--color-button-add-background-hover);
+}
