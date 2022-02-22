@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= pageTitle %>
+    </title>
+</head>
+
+<body>
+    <nav>
+        <a href="/" class="<%= linkActive === "/home" ? "active" : "" %>" >HOME</a>
+        <a href="/users" class="<%= linkActive === "/users" ? "active" : "" %>">USUÁRIOS</a>
+        <a href="/add-user" class="<%= linkActive === "/add-user" ? "active" : "" %>">NOVO USUÁRIO</a>
+    </nav>
