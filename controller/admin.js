@@ -1,4 +1,6 @@
-const allUsers = []
+const User = require('../model/user.js')
+
+const user = new User();
 
 exports.addUser = (req, res, next) => {
 
@@ -10,6 +12,8 @@ exports.addUser = (req, res, next) => {
 
 exports.getUsers = (req, res, next) => {
 
+    const allUsers = user.fetchAll();
+
     res.render('users', {
         pageTitle: 'Todos os usuários',
         allUsers,
@@ -19,16 +23,15 @@ exports.getUsers = (req, res, next) => {
 
 exports.saveUser = (req, res, next) => {
 
-    allUsers.push({
-        ...req.body,
-        id: allUsers.length
-    });
+    user.save(req.body)
     res.redirect("/users");
 }
 
 exports.deleteUser = (req, res, next) => {
 
-    allUsers.splice(req.body.userID, 1);
+    const userID = req.body.userID
+
+    user.delete(userID)
     res.redirect("/users");
 }
 
