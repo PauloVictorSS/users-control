@@ -8,12 +8,16 @@
     <p>
         <%= user.description %>
     </p>
-    <form action="/deleting-post" method="POST">
-        <input type="hidden" name="userID" value="<%= user.id %>">
-        <div class="footer">
-            <button class="delete-user">
-                <img src="/images/trash.png" alt="APAGAR">
+    <div class="footer">
+        <a href="/edit-user/<%= user.id %>">
+            <button class="confirm-button">
+                EDITAR
             </button>
-        </div>
-    </form>
+        </a>
+        <a href="/deleting-user/<%= user.id %>">
+            <button class="cancel-button">
+                APAGAR
+            </button>
+        </a>
+    </div>
 </div>

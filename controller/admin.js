@@ -2,11 +2,11 @@ const User = require('../model/user.js')
 
 const user = new User();
 
-exports.addUser = (req, res, next) => {
+exports.home = (req, res, next) => {
 
-    res.render('add-user', {
-        pageTitle: 'Adicionar um usuário',
-        linkActive: "/add-user"
+    res.render('index', {
+        pageTitle: 'Controle de Usuários',
+        linkActive: "/home"
     });
 }
 
@@ -21,24 +21,48 @@ exports.getUsers = (req, res, next) => {
     });
 }
 
+exports.addUser = (req, res, next) => {
+
+    res.render('add-user', {
+        pageTitle: 'Adicionar um usuário',
+        linkActive: "/add-user"
+    });
+}
+
 exports.saveUser = (req, res, next) => {
 
     user.save(req.body)
     res.redirect("/users");
 }
 
-exports.deleteUser = (req, res, next) => {
+exports.editUser = (req, res, next) => {
 
-    const userID = req.body.userID
+    const userInfos = user.getUser(req.params.userID)
 
-    user.delete(userID)
+    res.render('edit-user', {
+        pageTitle: 'Editar um Usuário',
+        userInfos,
+        linkActive: ""
+    });
+}
+
+exports.editingUser = (req, res, next) => {
+
+    const userID = req.params.userID
+
+    const newInfosUser = {
+        ...req.body,
+        id: userID
+    }
+
+    user.editUser(newInfosUser)
     res.redirect("/users");
 }
 
-exports.home = (req, res, next) => {
+exports.deleteUser = (req, res, next) => {
 
-    res.render('index', {
-        pageTitle: 'Controle de Usuários',
-        linkActive: "/home"
-    });
+    const userID = req.params.userID
+
+    user.delete(userID)
+    res.redirect("/users");
 }

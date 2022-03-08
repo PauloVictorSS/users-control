@@ -4,8 +4,10 @@
     --color-basic-text: white;
     --color-card-user-background: #1977c9;
     --color-card-user-footer-background: #1561a3;
-    --color-button-add-background: #64be5f;
-    --color-button-add-background-hover: #5ba357;
+    --color-button-confirm-background: #64be5f;
+    --color-button-confirm-background-hover: #5ba357;
+    --color-button-cancel-background: #be645f;
+    --color-button-cancel-background-hover: #a35b57;
     --color-warning-background: #be645f;
 }
 
@@ -63,4 +65,35 @@ h3.warning{
     box-shadow: 0 4px 4px 4px rgb(0, 0, 0, 0.2);
     border-radius: 10px;
     background-color: var(--color-warning-background);
+}
+
+button.confirm-button,
+button.cancel-button{
+
+    display: block;
+
+    margin: 0 auto;
+    padding: 5px 10px;
+
+    border: none;
+    border-radius: 10px;
+    background-color: var(--color-button-confirm-background);
+
+    transition: .3s;
+
+    cursor: pointer;
+}
+button.confirm-button:hover{
+    font-weight: bolder;
+    background-color: var(--color-button-confirm-background-hover);
+}
+
+button.cancel-button{
+
+    background-color: var(--color-button-cancel-background);
+}
+button.cancel-button:hover{
+
+    font-weight: bolder;
+    background-color: var(--color-button-cancel-background-hover);
 }

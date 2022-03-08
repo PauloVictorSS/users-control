@@ -44,24 +44,3 @@ div.block-label-input textarea{
 
     margin-top: 5px;
 }
-
-form#add-users-form button{
-
-    display: block;
-
-    margin: 0 auto;
-    padding: 5px;
-
-    border: none;
-    border-radius: 10px;
-    background-color: var(--color-button-add-background);
-
-    transition: .3s;
-
-    cursor: pointer;
-}
-
-form#add-users-form button:hover{
-    font-weight: bolder;
-    background-color: var(--color-button-add-background-hover);
-}

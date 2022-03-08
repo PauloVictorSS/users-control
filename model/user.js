@@ -6,6 +6,21 @@ function generateARandomID(){
 
 module.exports = class User {
 
+    findUserIndexByID(id){
+
+        return allUsers.findIndex(user => user.id == id);
+    }
+
+    fetchAll() {
+      return allUsers;
+    }
+
+    getUser(userId) {
+
+        const userIndex = this.findUserIndexByID(userId);
+        return allUsers[userIndex];
+    }
+
     save(infos) {
 
         allUsers.push({
@@ -13,14 +28,16 @@ module.exports = class User {
             id: generateARandomID()
         })
     }
+
+    editUser(newInfos) {
+
+        const userIndex = this.findUserIndexByID(newInfos.id);
+        allUsers[userIndex] = newInfos;
+    }
   
     delete(userIdDelete) {
 
-        const userIndexDelete = allUsers.findIndex(user => user.id == userIdDelete);
-        allUsers.splice(userIndexDelete, 1);
-    }
-
-    fetchAll() {
-      return allUsers;
+        const userIndex = this.findUserIndexByID(userIdDelete);
+        allUsers.splice(userIndex, 1);
     }
 };

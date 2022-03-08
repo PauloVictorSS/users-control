@@ -16,7 +16,11 @@ app.use('/add-user', usersController.addUser);
 
 app.use('/adding-a-user', usersController.saveUser);
 
-app.use('/deleting-post', usersController.deleteUser);
+app.use('/edit-user/:userID', usersController.editUser);
+
+app.use('/editing-user/:userID', usersController.editingUser);
+
+app.use('/deleting-user/:userID', usersController.deleteUser);
 
 app.use('/', usersController.home);
 
