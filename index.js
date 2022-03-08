@@ -1,7 +1,7 @@
 const express = require('express');
+const usersController = require('./controller/admin.js')
 
 const app = express();
-
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
@@ -10,47 +10,15 @@ app.use(express.static("public"));
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
 
-const allUsers = []
+app.use('/users', usersController.getUsers);
 
-app.use('/add-user', (req, res, next) => {
+app.use('/add-user', usersController.addUser);
 
-    res.render('add-user', {
-        pageTitle: 'Adicionar um usuário',
-        linkActive: "/add-user"
-    });
-});
+app.use('/adding-a-user', usersController.saveUser);
 
-app.use('/users', (req, res, next) => {
+app.use('/deleting-post', usersController.deleteUser);
 
-    res.render('users', {
-        pageTitle: 'Todos os usuários',
-        allUsers,
-        linkActive: "/users"
-    });
-});
-
-app.use('/adding-a-user', (req, res, next) => {
-
-    allUsers.push({
-        ...req.body,
-        id: allUsers.length
-    });
-    res.redirect("/users");
-});
-
-app.use('/deleting-post', (req, res, next) => {
-
-    allUsers.splice(req.body.userID, 1);
-    res.redirect("/users");
-});
-
-app.use('/', (req, res, next) => {
-
-    res.render('index', {
-        pageTitle: 'Controle de Usuários',
-        linkActive: "/home"
-    });
-});
+app.use('/', usersController.home);
 
 
 app.listen(3000);
